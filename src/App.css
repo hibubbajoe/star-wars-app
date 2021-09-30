@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: SW;
+  src: url('fonts/SF\ Distant\ Galaxy.ttf')
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --blue: #2E67F8;
+  --green: #2FF924;
+  --red: #EB212E;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 2rem;
+  font-family: SW;
+  letter-spacing: 2px;
+  background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h5 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  display: flex;
+  height: 60vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+.header-logo-img {
+  width: 400px;
+  height: auto;
+}
+
+.header-toggle-img {
+  width: 70px;
+  height: auto;
+  position: absolute;
+  right: 5rem;
+  cursor: pointer;
+}
+
+.modal-btn {
+  position: inherit;
+  top: 25px;
+  left: 25px;
+  background-color: var(--red);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+
+.char-btn {
+  background: none;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-family: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.char-btn:hover {
+  color: black;
+  background-color: var(--red)
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(182, 182, 182, 0.6);
+}
+
+.modal-main {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+
+
+/* LIGHTMODE */
+.lightMode {
+  background-color: white;
+  color: black;
+  height: 100vh;
+}
+
+.lightMode .char-btn:hover {
+  background-color: var(--green);
+  color: white;
+}
+
+.lightMode a {
+  color: black;
+}
+
+.lightMode .modal-btn {
+  background-color: var(--green);
+  color: black;
+}
+
+.lightMode .modal-btn:hover {
+  background-color: #1f831a;
+}
+
+.lightMode a:hover {
+  color: var(--green);
+}
+
+.lightMode .modal {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lightMode .modal-main {
+  background: white;
+  color: black;
+}
+
+.lightMode .char-btn {
+  color: black;
+}
+
+.lightMode h5 {
+  color: black;
 }
