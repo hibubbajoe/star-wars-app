@@ -7,7 +7,6 @@ function Container() {
     const [page, setPage] = useState("?page=1");
     const [character, setCharacter] = useState({});
     const [showModal, setShowModal] = useState(false);
-    // const [colorMode, setColorMode] = useState('darkMode');
 
     const onClick = (e) => {
         e.preventDefault();
@@ -40,7 +39,6 @@ function Container() {
         fetch(baseUrl)
             .then(response => response.json())
             .then(data => setData(data.results));
-
     }, [page])
 
     return (

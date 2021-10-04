@@ -12,10 +12,12 @@ const Header = () => {
         e.preventDefault();
         const background = document.querySelector('.App');
 
-        if (e.target.src === toggleWhite) {
+
+
+        if (e.target.src.includes(toggleBlack)) {
             setColorMode('darkMode');
             background.classList.replace('lightMode', 'darkMode');
-        } else if (e.target.src === toggleBlack) {
+        } else if (e.target.src.includes(toggleWhite)) {
             setColorMode('lightMode');
             background.classList.replace('darkMode', 'lightMode');
         }
