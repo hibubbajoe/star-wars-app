@@ -9,7 +9,6 @@
   --red: #EB212E;
 }
 
-
 body {
   padding: 0px;
   margin: 0px;
@@ -19,12 +18,28 @@ body {
   background-color: black;
 }
 
+a,
+li {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+}
+
 h5 {
   color: white;
 }
 
 ul {
   list-style-type: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 .container {
@@ -40,14 +55,6 @@ ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-a,
-li {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  margin: 3px;
 }
 
 a:hover,
@@ -67,6 +74,15 @@ li:hover {
 .header-logo-img {
   width: 400px;
   height: auto;
+}
+
+input[type="text"] {
+  width: 15rem;
+  height: 1.5rem;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  font-family: inherit;
 }
 
 .header-toggle-img {
@@ -102,22 +118,6 @@ li:hover {
   min-width: 30rem;
 }
 
-
-.char-btn {
-  background: none;
-  text-decoration: none;
-  color: white;
-  font-size: 15px;
-  font-family: inherit;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.char-btn:hover {
-  color: black;
-  background-color: var(--red)
-}
-
 .modal {
   position: absolute;
   top: 0;
@@ -143,17 +143,6 @@ li:hover {
   transform: translate(-50%, -50%);
 }
 
-
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
-}
-
-
-
 /* LIGHTMODE */
 .lightMode {
   background-color: white;
@@ -161,12 +150,24 @@ li:hover {
   height: 100vh;
 }
 
-.lightMode .char-btn:hover {
-  background-color: var(--green);
-  color: white;
+.lightMode h5 {
+  color: black;
+}
+
+.lightMode li {
+  color: black;
 }
 
 .lightMode a {
+  color: black;
+}
+
+.lightMode .modal {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lightMode .modal-main {
+  background: white;
   color: black;
 }
 
@@ -179,25 +180,16 @@ li:hover {
   background-color: #1f831a;
 }
 
+.lightMode .active {
+  color: var(--green);
+}
+
 .lightMode a:hover {
   color: var(--green);
 }
 
-.lightMode .modal {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.lightMode .modal-main {
-  background: white;
-  color: black;
-}
-
-.lightMode .char-btn {
-  color: black;
-}
-
-.lightMode h5 {
-  color: black;
+.lightMode li:hover {
+  color: var(--green);
 }
 
 @keyframes spin {

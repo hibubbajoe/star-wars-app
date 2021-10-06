@@ -54,7 +54,7 @@ function Container() {
         <div className="container">
             <h5>Click on a character for more information</h5>
 
-            <input type="text" placeholder="Searc for character" name="character" onChange={handleChange} />
+            <input type="text" placeholder="Search for character" name="character" onChange={handleChange} />
 
             <div class="list-div">
                 <ul>
