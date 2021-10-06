@@ -4,19 +4,27 @@ import Modal from './Modal';
 function Container() {
 
     const [data, setData] = useState([]);
-    const [page, setPage] = useState("?page=1");
+    const [page, setPage] = useState(1);
+    const [filter, setFilter] = useState("");
     const [character, setCharacter] = useState({});
     const [showModal, setShowModal] = useState(false);
 
-    const onClick = (e) => {
-        e.preventDefault();
-        if (e.target.innerText === 'Next') {
-            setPage('?page=2');
-            e.target.innerText = 'Previous';
-        } else if (e.target.innerText === 'Previous') {
-            setPage('?page=1');
-            e.target.innerText = 'Next'
-        }
+    const pageToggle = (e) => {
+
+        const pageNumber = document.getElementsByClassName('page_list_item');
+
+        Array.from(pageNumber).forEach((page, i) => {
+            if (page.innerText !== e.target.innerText) {
+                page.classList.replace('active', 'not_active');
+            } else {
+                page.classList.replace('not_active', 'active');
+            }
+        })
+        setPage(e.target.innerText);
+    }
+
+    const handleChange = (e) => {
+        setFilter(e.target.value)
     }
 
     const handleShow = () => {
@@ -34,23 +42,41 @@ function Container() {
     }
 
     useEffect(() => {
-        const baseUrl = `https://swapi.dev/api/people${page}`;
 
-        fetch(baseUrl)
+        const parameters = filter ? `search=${filter}` : `page=${page}`
+
+        fetch(`https://swapi.dev/api/people/?${parameters}`)
             .then(response => response.json())
-            .then(data => setData(data.results));
-    }, [page])
+            .then(data => setData(data.results))
+    }, [page, filter])
 
     return (
         <div className="container">
             <h5>Click on a character for more information</h5>
-            <ul>
-                {data && data.map((item, i) =>
-                    <li key={i}>
-                        <a value={item.name} onClick={charDetails}>{item.name}</a>
-                    </li>)}
-            </ul>
-            <button class="char-btn" onClick={onClick}>Next</button>
+
+            <input type="text" placeholder="Searc for character" name="character" onChange={handleChange} />
+
+            <div class="list-div">
+                <ul>
+                    {data && data.map((item, i) =>
+                        <li key={i}>
+                            <a value={item.name} onClick={charDetails}>{item.name}</a>
+                        </li>)}
+                </ul>
+            </div>
+            <div>
+                <ul class="page_list">
+                    <li onClick={pageToggle} class="page_list_item active">1</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">2</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">3</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">4</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">5</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">6</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">7</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">8</li>
+                    <li onClick={pageToggle} class="page_list_item not_active">9</li>
+                </ul>
+            </div>
 
             <Modal show={showModal} handleClose={handleClose} character={character} />
         </div>

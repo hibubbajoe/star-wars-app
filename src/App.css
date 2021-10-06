@@ -42,14 +42,26 @@ ul {
   align-items: center;
 }
 
-a {
+a,
+li {
   text-decoration: none;
   color: white;
   cursor: pointer;
+  margin: 3px;
 }
 
-a:hover {
+a:hover,
+li:hover {
   color: var(--red);
+}
+
+.active {
+  color: var(--red)
+}
+
+.page_list {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-logo-img {
@@ -63,6 +75,10 @@ a:hover {
   position: absolute;
   right: 5rem;
   cursor: pointer;
+  animation-name: spin;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .modal-btn {
@@ -79,6 +95,11 @@ a:hover {
   cursor: pointer;
   font-size: 15px;
   font-family: inherit;
+}
+
+.list-div {
+  min-height: 25rem;
+  min-width: 30rem;
 }
 
 
@@ -177,4 +198,14 @@ a:hover {
 
 .lightMode h5 {
   color: black;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
