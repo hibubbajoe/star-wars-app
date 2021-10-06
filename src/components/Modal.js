@@ -3,10 +3,10 @@ const Modal = ({ handleClose, show, character }) => {
     return (
         <div className={showHideClassName}>
             <section class="modal-main">
-                <button type="button" class="modal-btn" onClick={handleClose}>Go back</button>
+                <button type="button" class="modal-btn" onClick={handleClose}>x</button>
                 <div class="modal-content">
                     <h2>{character.name}</h2>
-                    <ul>
+                    <ul class="modal-list">
                         <li>Birthyear: {character.birth_year}</li>
                         <li>Gender: {character.gender}</li>
                         <li>Height: {character.height}</li>

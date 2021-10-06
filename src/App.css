@@ -44,7 +44,7 @@ ul {
 
 .container {
   display: flex;
-  height: 60vh;
+  height: 50%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -57,14 +57,22 @@ ul {
   align-items: center;
 }
 
-a:hover,
-li:hover {
+a:hover {
   color: var(--red);
+}
+
+.page_list_item:hover {
+  color: var(--red);
+}
+
+.modal-btn:hover {
+  color: black;
 }
 
 .active {
   color: var(--red)
 }
+
 
 .page_list {
   display: flex;
@@ -72,7 +80,7 @@ li:hover {
 }
 
 .header-logo-img {
-  width: 400px;
+  width: 500px;
   height: auto;
 }
 
@@ -86,10 +94,10 @@ input[type="text"] {
 }
 
 .header-toggle-img {
-  width: 70px;
+  width: 80px;
   height: auto;
   position: absolute;
-  right: 5rem;
+  right: 5%;
   cursor: pointer;
   animation-name: spin;
   animation-duration: 7s;
@@ -101,11 +109,11 @@ input[type="text"] {
   position: inherit;
   top: 25px;
   left: 25px;
-  background-color: var(--red);
+  background-color: red;
   border: none;
   border-radius: 50px;
-  color: white;
-  padding: 10px 15px;
+  color: red;
+  padding: 2px 15px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -118,22 +126,13 @@ input[type="text"] {
   min-width: 30rem;
 }
 
-.modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(182, 182, 182, 0.6);
-}
-
 .modal-main {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: rgb(75, 69, 69);
   color: white;
   width: 60%;
   height: 80%;
@@ -147,7 +146,7 @@ input[type="text"] {
 .lightMode {
   background-color: white;
   color: black;
-  height: 100vh;
+  height: 100%;
 }
 
 .lightMode h5 {
@@ -162,22 +161,9 @@ input[type="text"] {
   color: black;
 }
 
-.lightMode .modal {
-  background: rgba(0, 0, 0, 0.6);
-}
-
 .lightMode .modal-main {
-  background: white;
+  background: rgb(124, 138, 120);
   color: black;
-}
-
-.lightMode .modal-btn {
-  background-color: var(--green);
-  color: black;
-}
-
-.lightMode .modal-btn:hover {
-  background-color: #1f831a;
 }
 
 .lightMode .active {
@@ -188,9 +174,11 @@ input[type="text"] {
   color: var(--green);
 }
 
-.lightMode li:hover {
+
+.lightMode .page_list_item:hover {
   color: var(--green);
 }
+
 
 @keyframes spin {
   from {
@@ -199,5 +187,36 @@ input[type="text"] {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .header {
+    margin-top: 1rem;
+  }
+
+  .header-logo-img {
+    width: 200px;
+    height: auto;
+  }
+
+  .header-toggle-img {
+    width: 60px;
+  }
+
+  h5 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .modal-main {
+    min-width: 90%;
+    height: 100%;
   }
 }

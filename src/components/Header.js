@@ -10,9 +10,7 @@ const Header = () => {
 
     const colorToggle = (e) => {
         e.preventDefault();
-        const background = document.querySelector('.App');
-
-
+        const background = document.body;
 
         if (e.target.src.includes(toggleBlack)) {
             setColorMode('darkMode');
